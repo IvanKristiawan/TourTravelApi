@@ -16,7 +16,19 @@ const getUserLogin = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    res.json(user);
+    res.json(user)
+  } catch (error) {
+    // Error 500 = Kesalahan di server
+    res.status(500).json({ message: error.message });
+  }
+};
+
+const getUserLoginEmail = async (req, res) => {
+  try {
+    const user = await User.findOne({
+      email: req.params.id,
+    });
+    res.json(user)
   } catch (error) {
     // Error 500 = Kesalahan di server
     res.status(500).json({ message: error.message });
@@ -76,6 +88,7 @@ const deleteUser = async (req, res) => {
 module.exports = {
   getUsers,
   getUserLogin,
+  getUserLoginEmail,
   getUserById,
   saveUser,
   updateUser,

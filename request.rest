@@ -4,6 +4,9 @@ GET http://localhost:5000/users
 ### User Id
 GET http://localhost:5000/users
 
+### User email
+GET http://localhost:5000/userEmail/budi@gmail.com
+
 ### User Login
 POST http://localhost:5000/login
 Content-Type: application/json
