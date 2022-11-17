@@ -1,0 +1,113 @@
+### User
+GET http://localhost:5000/users
+
+### User Id
+GET http://localhost:5000/users
+
+### User Login
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "budi@gmail.com",
+    "password": "budi"
+}
+
+### User Save
+POST http://localhost:5000/users
+Content-Type: application/json
+
+{
+    "username": "budi",
+    "email": "budi@gmail.com",
+    "password": "budi"
+}
+
+### User Update
+PATCH http://localhost:5000/users/6374d611da41e6b2698c83e0
+Content-Type: application/json
+
+{
+    "username": "budi",
+    "email": "budi@gmail.com",
+    "password": "budi"
+}
+
+### User Delete
+DELETE http://localhost:5000/users/6374d611da41e6b2698c83e0
+
+### Paket Travel
+GET http://localhost:5000/paketTravels
+
+### Paket Travel Id
+GET http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+
+### Paket Travel Save
+POST http://localhost:5000/paketTravels
+Content-Type: application/json
+
+{
+    "namaPaket": "Paket Hemat",
+    "tujuan": "Singapura",
+    "asal": "Yogyakarta",
+    "harga": 2000000,
+    "jam": "10.00",
+    "durasi": "2 jam"
+}
+
+### Paket Travel Update
+PATCH http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+Content-Type: application/json
+
+{
+    "namaPaket": "Paket Hemat",
+    "tujuan": "Singapura",
+    "asal": "Yogyakarta",
+    "harga": 2000000,
+    "jam": "10.00",
+    "durasi": "2 jam"
+}
+
+### Paket Travel Delete
+DELETE http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+
+### Paket Terbeli
+GET http://localhost:5000/paketTerbelis
+
+### Paket Terbeli Id
+GET http://localhost:5000/paketTerbelis
+
+### Paket Terbeli Login
+POST http://localhost:5000/userPaketTerbeli
+Content-Type: application/json
+
+{
+    "idUser": "6374d648da41e6b2698c83e6"
+}
+
+### Paket Terbeli Save
+POST http://localhost:5000/paketTerbelis
+Content-Type: application/json
+
+{
+    "idUser": "6374d648da41e6b2698c83e6",
+    "idPaketTravel": "6375757bf1f4a3c00c094400",
+    "namaPaket": "Paket Hemat",
+    "harga": 2000000,
+    "jumlahTiket": 2
+}
+
+### Paket Terbeli Update
+PATCH http://localhost:5000/paketTerbelis/637578286f2082b503f2dc06
+Content-Type: application/json
+
+{
+    "idUser": "6374d648da41e6b2698c83e6",
+    "idPaketTravel": "6375757bf1f4a3c00c094400",
+    "namaPaket": "Paket Hemat",
+    "harga": 2000000,
+    "jumlahTiket": 2
+}
+
+### Paket Terbeli Delete
+DELETE http://localhost:5000/paketTerbelis/637578286f2082b503f2dc06
