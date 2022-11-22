@@ -2,7 +2,7 @@
 GET http://localhost:5000/users
 
 ### User Id
-GET http://localhost:5000/users
+GET http://localhost:5000/users/6374d648da41e6b2698c83e6
 
 ### User email
 GET http://localhost:5000/userEmail/budi@gmail.com
@@ -43,7 +43,7 @@ DELETE http://localhost:5000/users/6374d611da41e6b2698c83e0
 GET http://localhost:5000/paketTravels
 
 ### Paket Travel Id
-GET http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+GET http://localhost:5000/paketTravels/6375757bf1f4a3c00c094400
 
 ### Paket Travel Save
 POST http://localhost:5000/paketTravels

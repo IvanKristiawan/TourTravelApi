@@ -1,9 +1,18 @@
 const User = require("../models/UserModel.js");
 
+function getStandardResponse(status, message, data) {
+  return {
+    status: status,
+    message: message,
+    data: data,
+  };
+}
+
 const getUsers = async (req, res) => {
   try {
     const users = await User.find();
-    res.json(users);
+    // res.json(users);
+    res.json(getStandardResponse(true, "", users));
   } catch (error) {
     // Error 500 = Kesalahan di server
     res.status(500).json({ message: error.message });
@@ -16,7 +25,8 @@ const getUserLogin = async (req, res) => {
       email: req.body.email,
       password: req.body.password,
     });
-    res.json(user)
+    // res.json(user);
+    res.json(getStandardResponse(true, "", user));
   } catch (error) {
     // Error 500 = Kesalahan di server
     res.status(500).json({ message: error.message });
@@ -25,10 +35,11 @@ const getUserLogin = async (req, res) => {
 
 const getUserLoginEmail = async (req, res) => {
   try {
-    const user = await User.findOne({
+    const user = await User.find({
       email: req.params.id,
     });
-    res.json(user)
+    // res.json(user);
+    res.json(getStandardResponse(true, "", user));
   } catch (error) {
     // Error 500 = Kesalahan di server
     res.status(500).json({ message: error.message });
@@ -38,7 +49,8 @@ const getUserLoginEmail = async (req, res) => {
 const getUserById = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
-    res.json(user);
+    // res.json(user);
+    res.json(getStandardResponse(true, "", user));
   } catch (error) {
     // Error 404 = Not Found
     res.status(404).json({ message: error.message });
