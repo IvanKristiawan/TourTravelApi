@@ -19,6 +19,18 @@ const getPaketTravels = async (req, res) => {
   }
 };
 
+const getPaketTravelByNamaPaket = async (req, res) => {
+  try {
+    const paketTravel = await PaketTravel.findOne({
+      idPaket: req.params.idPaket,
+    });
+    res.json(getStandardResponse(true, "", paketTravel));
+  } catch (error) {
+    // Error 404 = Not Found
+    res.status(404).json({ message: error.message });
+  }
+};
+
 const getPaketTravelById = async (req, res) => {
   try {
     const paketTravel = await PaketTravel.findById(req.params.id);
@@ -51,6 +63,13 @@ const updatePaketTravel = async (req, res) => {
       },
       { new: true }
     );
+    // const updatedPaketTravel = await PaketTravel.findOneAndUpdate(
+    //   { namaPaket: req.body.namaPaket },
+    //   {
+    //     $set: req.body,
+    //   },
+    //   { new: true }
+    // );
     // Status 200 = Successful
     res.status(200).json(updatedPaketTravel);
   } catch (error) {
@@ -74,6 +93,7 @@ const deletePaketTravel = async (req, res) => {
 
 module.exports = {
   getPaketTravels,
+  getPaketTravelByNamaPaket,
   getPaketTravelById,
   savePaketTravel,
   updatePaketTravel,

@@ -43,14 +43,15 @@ DELETE http://localhost:5000/users/6374d611da41e6b2698c83e0
 GET http://localhost:5000/paketTravels
 
 ### Paket Travel Id
-GET http://localhost:5000/paketTravels/6375757bf1f4a3c00c094400
+GET http://localhost:5000/paketTravels/1
 
 ### Paket Travel Save
 POST http://localhost:5000/paketTravels
 Content-Type: application/json
 
 {
-    "namaPaket": "Paket Hemat",
+    "idPaket": "1",
+    "namaPaket": "Paketz",
     "tujuan": "Singapura",
     "asal": "Yogyakarta",
     "harga": 2000000,
@@ -72,13 +73,16 @@ Content-Type: application/json
 }
 
 ### Paket Travel Delete
-DELETE http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+DELETE http://localhost:5000/paketTravels/11
 
 ### Paket Terbeli
 GET http://localhost:5000/paketTerbelis
 
 ### Paket Terbeli Id
 GET http://localhost:5000/paketTerbelis
+
+### Paket Terbeli Nama Paket
+GET http://localhost:5000/paketTerbelis/
 
 ### Paket Terbeli Login
 POST http://localhost:5000/userPaketTerbeli
@@ -93,15 +97,16 @@ POST http://localhost:5000/paketTerbelis
 Content-Type: application/json
 
 {
+    "idPaket": "1",
     "idUser": "6374d648da41e6b2698c83e6",
     "idPaketTravel": "6375757bf1f4a3c00c094400",
-    "namaPaket": "Paket Hemat",
+    "namaPaket": "Paketinzzz",
     "harga": 2000000,
     "jumlahTiket": 2
 }
 
 ### Paket Terbeli Update
-PATCH http://localhost:5000/paketTerbelis/637578286f2082b503f2dc06
+PATCH http://localhost:5000/paketTerbelis/6375789eb0e8b9d93fca107f
 Content-Type: application/json
 
 {
