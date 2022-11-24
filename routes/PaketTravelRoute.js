@@ -12,7 +12,7 @@ const router = express.Router();
 router.get("/paketTravels", getPaketTravels);
 router.get("/paketTravels/:idPaket", getPaketTravelByNamaPaket);
 router.post("/paketTravels", savePaketTravel);
-router.put("/paketTravels/:id", updatePaketTravel);
-router.delete("/paketTravels/:id", deletePaketTravel);
+router.put("/paketTravels/:idPaket", updatePaketTravel);
+router.delete("/paketTravels/:idPaket", deletePaketTravel);
 
 module.exports = router;

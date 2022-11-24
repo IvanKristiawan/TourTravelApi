@@ -60,10 +60,11 @@ Content-Type: application/json
 }
 
 ### Paket Travel Update
-PATCH http://localhost:5000/paketTravels/6375755df1f4a3c00c0943fa
+PUT http://localhost:5000/paketTravels/4
 Content-Type: application/json
 
 {
+    "idPaket": 4,
     "namaPaket": "Paket Hemat",
     "tujuan": "Singapura",
     "asal": "Yogyakarta",
@@ -73,7 +74,7 @@ Content-Type: application/json
 }
 
 ### Paket Travel Delete
-DELETE http://localhost:5000/paketTravels/11
+DELETE http://localhost:5000/paketTravels/4
 
 ### Paket Terbeli
 GET http://localhost:5000/paketTerbelis

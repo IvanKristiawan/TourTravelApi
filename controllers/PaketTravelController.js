@@ -21,7 +21,7 @@ const getPaketTravels = async (req, res) => {
 
 const getPaketTravelByNamaPaket = async (req, res) => {
   try {
-    const paketTravel = await PaketTravel.findOne({
+    const paketTravel = await PaketTravel.find({
       idPaket: req.params.idPaket,
     });
     res.json(getStandardResponse(true, "", paketTravel));
@@ -56,8 +56,8 @@ const savePaketTravel = async (req, res) => {
 
 const updatePaketTravel = async (req, res) => {
   try {
-    const updatedPaketTravel = await PaketTravel.findByIdAndUpdate(
-      req.params.id,
+    const updatedPaketTravel = await PaketTravel.findOneAndUpdate(
+      { idPaket: req.params.idPaket },
       {
         $set: req.body,
       },
@@ -81,7 +81,7 @@ const updatePaketTravel = async (req, res) => {
 const deletePaketTravel = async (req, res) => {
   try {
     const deletedPaketTravel = await PaketTravel.deleteOne({
-      _id: req.params.id,
+      idPaket: req.params.idPaket,
     });
     // Status 200 = Successful
     res.status(200).json(deletedPaketTravel);
