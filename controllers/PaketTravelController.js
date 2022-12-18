@@ -21,8 +21,8 @@ const getPaketTravels = async (req, res) => {
 
 const getPaketTravelByNamaPaket = async (req, res) => {
   try {
-    const paketTravel = await PaketTravel.find({
-      idPaket: req.params.idPaket,
+    const paketTravel = await PaketTravel.findOne({
+      idPaket: req.params.id,
     });
     res.send(paketTravel);
     // res.json(getStandardResponse(true, "", paketTravel));

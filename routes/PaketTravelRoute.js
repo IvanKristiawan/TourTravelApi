@@ -10,7 +10,7 @@ const deletePaketTravel = content.deletePaketTravel;
 const router = express.Router();
 
 router.get("/paketTravels", getPaketTravels);
-router.get("/paketTravels/:idPaket", getPaketTravelByNamaPaket);
+router.get("/paketTravels/:id", getPaketTravelByNamaPaket);
 router.post("/paketTravels", savePaketTravel);
 router.put("/paketTravels/:idPaket", updatePaketTravel);
 router.delete("/paketTravels/:idPaket", deletePaketTravel);
