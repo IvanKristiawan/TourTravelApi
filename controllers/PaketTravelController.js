@@ -11,8 +11,8 @@ function getStandardResponse(status, message, data) {
 const getPaketTravels = async (req, res) => {
   try {
     const paketTravels = await PaketTravel.find();
-    // res.send(paketTravels);
-    res.json(getStandardResponse(true, "", paketTravels));
+    res.send(paketTravels);
+    // res.json(getStandardResponse(true, "", paketTravels));
   } catch (error) {
     // Error 500 = Kesalahan di server
     res.status(500).json({ message: error.message });
@@ -24,7 +24,8 @@ const getPaketTravelByNamaPaket = async (req, res) => {
     const paketTravel = await PaketTravel.find({
       idPaket: req.params.idPaket,
     });
-    res.json(getStandardResponse(true, "", paketTravel));
+    res.send(paketTravel);
+    // res.json(getStandardResponse(true, "", paketTravel));
   } catch (error) {
     // Error 404 = Not Found
     res.status(404).json({ message: error.message });
@@ -34,8 +35,8 @@ const getPaketTravelByNamaPaket = async (req, res) => {
 const getPaketTravelById = async (req, res) => {
   try {
     const paketTravel = await PaketTravel.findById(req.params.id);
-    // res.json(paketTravel);
-    res.json(getStandardResponse(true, "", paketTravel));
+    res.json(paketTravel);
+    // res.json(getStandardResponse(true, "", paketTravel));
   } catch (error) {
     // Error 404 = Not Found
     res.status(404).json({ message: error.message });
